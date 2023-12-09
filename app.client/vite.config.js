@@ -11,7 +11,7 @@ const baseFolder =
     ? `${process.env.APPDATA}/ASP.NET/https`
     : `${process.env.HOME}/.aspnet/https`;
 
-if (process.env.NODE_ENV !== "production") {
+
   // Only generate a certificate in non-production environments
   const certificateArg = process.argv
     .map((arg) => arg.match(/--name=(?<value>.+)/i))
@@ -50,7 +50,7 @@ if (process.env.NODE_ENV !== "production") {
       throw new Error("Could not create certificate.");
     }
   }
-}
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
